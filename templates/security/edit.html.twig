@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   <section class="bg-cover position-relative" style="background:red url({{asset('front/themezhub.net/goodup-live/goodup/assets/img/cover.jpg')}}) no-repeat;" data-overlay="3">
+			
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+								
+							<div class="dashboard-head-author-clicl">
+								<div class="dashboard-head-author-thumb">
+									<img src="{{asset('front/themezhub.net/goodup-live/goodup/assets/img/t-7.png')}}" class="img-fluid" alt="" />
+								</div>
+								<div class="dashboard-head-author-caption">
+                                 {% if app.user %}
+									<div class="dashploio"><h4>{{app.user.userIdentifier}}</h4></div>
+									<div class="dashploio"><span class="agd-location"><i class="lni lni-envelope me-2"></i>{{app.user.email}}</span></div>
+									<div class="listing-rating high"><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i></div>
+								{% endif %}
+                                </div>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+			</section>
+<div class="goodup-dashboard-wrap gray px-4 py-5">
+    <div class="dashboard-widg-bar d-block">
+						<div class="row">
+							<div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 order-xl-last order-lg-last order-md-last">
+								<div class="d-flex bg-white rounded px-3 py-3 mb-3">
+									<div class="dash-figure">
+										<div class="dash-figure-thumb"><img src="assets/img/t-4.png" class="img-fluid rounded" alt="" /></div>
+										<div class="upload-photo-btn">
+											<div class="Uploadphoto">
+												<span><i class="fas fa-upload"></i> Upload Photo</span>
+												<input type="file" class="upload">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
+								<form class="submit-form">
+								{{ form_start(form) }}
+								{{ form_errors(form) }}
+   
+									<div class="dashboard-list-wraps bg-white rounded mb-4">
+										<div class="dashboard-list-wraps-head br-bottom py-3 px-3">
+											<div class="dashboard-list-wraps-flx">
+												<h4 class="mb-0 ft-medium fs-md"><i class="fa fa-user-check me-2 theme-cl fs-sm"></i>My Profile</h4>	
+											</div>
+										</div>
+										
+										<div class="dashboard-list-wraps-body py-3 px-3">
+											<div class="row">
+												<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+													<div class="form-group">
+														<label class="mb-1">First Name</label>
+																{{ form_widget(form.name, {
+        attr: {
+            class: 'form-control rounded'
+            
+        }
+    }) }}
+													</div>
+												</div>
+												<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+													<div class="form-group">
+														<label class="mb-1">Last Name</label>
+														{{ form_widget(form.lastname, {
+        attr: {
+            class: 'form-control rounded'
+            
+        }
+    }) }}
+													</div>
+												</div>
+												<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+													<div class="form-group">
+														<label class="mb-1">Username</label>
+{{ form_widget(form.username, {
+        attr: {
+            class: 'form-control rounded'
+            
+        }})}}
+													</div>
+												</div>
+												<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+													<div class="form-group">
+														<label class="mb-1">Email ID</label>
+														{{ form_widget(form.email, {
+        attr: {
+            class: 'form-control rounded'
+            
+        }
+    }) }}
+													</div>
+												</div>
+											    
+												<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+													<div class="form-group">
+														<label class="mb-1">Mobile</label>
+													{{ form_widget(form.phone, {
+        attr: {
+            class: 'form-control rounded'
+            
+        }
+    }) }}
+													</div>
+												</div>
+											
+													
+												
+									
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+													<div class="form-group">
+														<button class="btn theme-bg rounded text-light" >Save Changes</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									 {{ form_end(form) }}
+								</form>
+							</div>
+						</div>
+							
+					</div>
+
+{% endblock %}
